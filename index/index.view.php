@@ -43,6 +43,31 @@
             
         <?php endforeach; ?>
     </ul>
+    <!-- <ul>
+        <h1>Clientes ordenados por gasto total</h1>
+        
+        <?php foreach ($listaPorPrecio as $client) : ?>
+            <li>
+            <?php echo $client['name'] ?>
+            <?php echo "<br>" ?>
+            <?php echo "Precio Total: " . $client['orders']['total']; ?>
+            </li>
+            
+        <?php endforeach; ?>
+    </ul> -->
+
+    <ol>
+    <h1>Clientes ordenados por gasto total</h1>
+        <?php
+        $sortedClients = $clients;
+        usort($sortedClients, "compareTotalPrice");
+ 
+        foreach ($sortedClients as $client) : ?>
+            <li>
+                <?= $client["name"]; ?>: $<?= !empty($client["orders"]["total"]) ? $client["orders"]["total"] : 0; ?>
+            </li>
+        <?php endforeach; ?>
+    </ol>
 </body>
 
 </html>
