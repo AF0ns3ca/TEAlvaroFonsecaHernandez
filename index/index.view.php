@@ -60,7 +60,7 @@
     <h1>Clientes ordenados por gasto total</h1>
         <?php
         $sortedClients = $clients;
-        usort($sortedClients, "compareTotalPrice");
+        usort($sortedClients, "sortPrice");
  
         foreach ($sortedClients as $client) : ?>
             <li>

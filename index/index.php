@@ -52,7 +52,7 @@ $listaOrders = array_filter($clients, function ($client) {
 //     return $a['orders']['total'] <=> $b['orders']['total'];
 // });
 
-function compareTotalPrice($a, $b)
+function sortPrice($a, $b)
 {
     $totalPriceA = !empty($a["orders"]["total"]) ? $a["orders"]["total"] : 0;
     $totalPriceB = !empty($b["orders"]["total"]) ? $b["orders"]["total"] : 0;
